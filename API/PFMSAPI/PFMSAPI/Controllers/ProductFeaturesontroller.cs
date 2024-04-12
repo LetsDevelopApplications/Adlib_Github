@@ -24,5 +24,34 @@ namespace PFMSAPI.Controllers
 
 
         }
+
+        [HttpPost]
+        [Route("AddProductFeatures")]
+        public async Task<ProductFeature> AddProductFeatures(ProductFeature newfeature)
+        {
+            await _productFeatures.AddProductFeature(newfeature);
+            return newfeature;
+            
+        }
+
+        [HttpPut("{id}")]
+       
+        public async Task<bool> EditProductFeatures(ProductFeature newfeature)
+        {
+            await _productFeatures.EditProductFeature(newfeature);
+
+            return true;
+
+        }
+
+
+        //[HttpDelete]
+        //[Route("DeleteProductFeatures")]
+        //public ActionResult<bool> DeleteProductFeatures(ProductFeature newfeature)
+        //{
+        //    return Ok(_productFeatures.DeleteProductFeature(newfeature));
+
+
+        //}
     }
 }

@@ -13,20 +13,25 @@ import {FormsModule} from '@angular/forms';
 import { ProductFeaturesService } from '../../services/product-features.service';
 import { error } from 'console';
 import { response } from 'express';
+import { CreateFeatureComponent } from "../create-feature/create-feature.component";
+import { EditFeatureComponent } from "../edit-feature/edit-feature.component";
 
 @Component({
-  selector: 'app-features-list',
-  standalone: true,
-  imports: [CommonModule,
-    FormsModule,
-    NgIf,
-    NgFor,NgForOf,RouterModule],
-  templateUrl: './features-list.component.html',
-  styleUrl: './features-list.component.css'
+    selector: 'app-features-list',
+    standalone: true,
+    templateUrl: './features-list.component.html',
+    styleUrl: './features-list.component.css',
+    imports: [CommonModule,
+        FormsModule,
+        NgIf,
+        NgFor, NgForOf, RouterModule, CreateFeatureComponent, EditFeatureComponent]
 })
 export class FeaturesListComponent implements OnInit{
   features: Feature[] = [];
-  
+ 
+  feature:any;
+  featureToEdit:any;
+
   constructor(private productfeaturesservice:ProductFeaturesService, private router: Router){}
 
   ngOnInit(): void {
@@ -41,6 +46,12 @@ export class FeaturesListComponent implements OnInit{
       }
     });
   }
+
+  editFeature(feature: Feature){
+    this.featureToEdit = feature;
+    console.log(this.featureToEdit);
+  }
+
     // {
     //   featuretitle:'Inventory change',
     //   description:'Inventory change notification',

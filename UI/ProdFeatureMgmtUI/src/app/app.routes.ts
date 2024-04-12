@@ -8,5 +8,6 @@ export const routes: Routes = [
     {path: '',component:FeaturesListComponent,pathMatch:'full'},
     {path: 'featuresList',component:FeaturesListComponent,pathMatch:'full'},
     {path: 'createFeature',component:CreateFeatureComponent,pathMatch:'full'},
-    {path: 'editFeature',component:EditFeatureComponent,pathMatch:'full'}
+    {path: 'edit/:id',component:EditFeatureComponent,pathMatch:'full'},
+    {path: 'delete/:id',component:EditFeatureComponent,pathMatch:'full'}
 ];

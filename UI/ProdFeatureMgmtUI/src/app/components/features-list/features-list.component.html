@@ -1,7 +1,9 @@
 <div class="container">
 <h1> Features List</h1>
 
-<a routerLink="/createFeature" class="btn btn-primary">Create Feature</a>
+<a routerLink="/createFeature"  class="btn btn-primary">Create Feature</a>
+
+
 <table class="table" *ngIf="features && features.length >0">
     <thead>
         <th scope="col">ID</th>
@@ -14,16 +16,21 @@
     </thead>
     <tbody>
         <tr *ngFor="let feature of features">
-            <td>{{ feature.Id }} </td>
+            <td>{{ feature.id }} </td>
             <td>{{ feature.featureTitle }} </td>
             <td>{{ feature.description }} </td>
             <td>{{ feature.estCapacity }} </td>
             <td>{{ feature.status }} </td>
             <td>{{ feature.targetCompDate }} </td>
             <td>{{ feature.actualCompDate }} </td>
+            <td><button (click)="editFeature(feature)" class="btn btn-primary">Edit</button></td>  
+            <th><button (click)="editFeature(feature)" class="btn btn-primary">Delete</button></th>   
         </tr>
     </tbody>
 </table>
+
+<app-edit-feature [feature]="featureToEdit"></app-edit-feature>
+
 <p *ngIf="!features || features.length ==0">No Features found!!</p>
 
 </div>

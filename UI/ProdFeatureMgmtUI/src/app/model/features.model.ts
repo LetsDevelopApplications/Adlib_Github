@@ -1,5 +1,5 @@
 export interface Feature{
-    Id:string,
+    id:string,
     featureTitle: string,
     description: string,
     estCapacity:string,
