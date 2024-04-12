@@ -47,11 +47,17 @@ constructor(private productFeatureService: ProductFeaturesService,private router
 //     this.router.navigateByUrl('featuresList');
 //   });
 // }
-
-createProductFeature(): void {
-  this.productFeatureService.addProductFeature(this.newFeature).subscribe(res => {
-    alert(res.toString());
+createProductFeature() {
+  this.productFeatureService.addProductFeature(this.newFeature).subscribe({
+    next: (Feature) => {
+      this.router.navigate(['featuresList']);
+    },
+    error: (response) => {
+      console.log(response);
+    },
   });
 }
+
+
 
 }

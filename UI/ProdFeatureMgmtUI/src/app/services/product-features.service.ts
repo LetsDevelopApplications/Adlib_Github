@@ -29,7 +29,7 @@ export class ProductFeaturesService {
  
   addProductFeature(Feature: Feature): Observable<any> {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.post<any>(this.baseApiUrl + '/api/ProductFeaturesontroller/AddProductFeatures', Feature, httpOptions);
+    return this.http.post<Feature>(this.baseApiUrl + '/api/ProductFeaturesontroller/AddProductFeatures', Feature, httpOptions);
   }
 
   editProductFeature(Feature: Feature): Observable<Feature> {
@@ -39,7 +39,7 @@ export class ProductFeaturesService {
 
   DeleteProductFeature(Feature: Feature): Observable<any> {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.post<any>(this.baseApiUrl + '/api/ProductFeaturesontroller/DeleteProductFeatures', Feature, httpOptions);
+    return this.http.delete<Feature>(this.baseApiUrl + '/api/ProductFeaturesontroller');
   }
 
 

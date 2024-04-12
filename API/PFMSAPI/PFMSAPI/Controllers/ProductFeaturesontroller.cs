@@ -27,10 +27,10 @@ namespace PFMSAPI.Controllers
 
         [HttpPost]
         [Route("AddProductFeatures")]
-        public async Task<ProductFeature> AddProductFeatures(ProductFeature newfeature)
+        public async Task<bool> AddProductFeatures(ProductFeature newfeature)
         {
             await _productFeatures.AddProductFeature(newfeature);
-            return newfeature;
+            return true;
             
         }
 
@@ -45,13 +45,12 @@ namespace PFMSAPI.Controllers
         }
 
 
-        //[HttpDelete]
-        //[Route("DeleteProductFeatures")]
-        //public ActionResult<bool> DeleteProductFeatures(ProductFeature newfeature)
-        //{
-        //    return Ok(_productFeatures.DeleteProductFeature(newfeature));
+        [HttpDelete]
+        public ActionResult<bool> DeleteProductFeatures(ProductFeature newfeature)
+        {
+            return Ok(_productFeatures.DeleteProductFeature(newfeature));
 
 
-        //}
+        }
     }
 }
