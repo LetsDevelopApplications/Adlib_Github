@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Feature } from '../../model/features.model';
 import { CommonModule } from '@angular/common';
-import { RouterModule} from '@angular/router';
+import { RouterModule,Router} from '@angular/router';
+
 
 import {
   NgIf,
@@ -9,6 +10,9 @@ import {
   NgFor
 } from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import { ProductFeaturesService } from '../../services/product-features.service';
+import { error } from 'console';
+import { response } from 'express';
 
 @Component({
   selector: 'app-features-list',
@@ -20,16 +24,31 @@ import {FormsModule} from '@angular/forms';
   templateUrl: './features-list.component.html',
   styleUrl: './features-list.component.css'
 })
-export class FeaturesListComponent {
-  features: Feature[] = [
-    {
-      featuretitle:'Inventory change',
-      description:'Inventory change notification',
-      estCapacity:'S',
-      status:'New',
-      targetCompDate: '10-Jun-2023',
-      ActualCompDate: '12-Jun-2023'
-    }
+export class FeaturesListComponent implements OnInit{
+  features: Feature[] = [];
+  
+  constructor(private productfeaturesservice:ProductFeaturesService, private router: Router){}
+
+  ngOnInit(): void {
+    this.productfeaturesservice.getAllProductFeatures()
+    .subscribe({
+      next: (features) => {
+        this.features = features;
+        console.log(this.features);
+      },
+      error:(response) => {
+        console.log(response);
+      }
+    });
+  }
+    // {
+    //   featuretitle:'Inventory change',
+    //   description:'Inventory change notification',
+    //   estCapacity:'S',
+    //   status:'New',
+    //   targetCompDate: '10-Jun-2023',
+    //   ActualCompDate: '12-Jun-2023'
+    // }
     // {
     //   featuretitle:'User settings',
     //   description:'User settings are persisted',
@@ -47,6 +66,6 @@ export class FeaturesListComponent {
     //   ActualCompDate: '12-Jun-2023'
     // }
 
-  ]
+  // ]
     
 }

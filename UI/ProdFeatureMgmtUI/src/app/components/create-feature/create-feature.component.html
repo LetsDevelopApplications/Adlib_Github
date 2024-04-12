@@ -1,1 +1,30 @@
-<p>create-feature works!</p>
+<div class="container">
+    <h1> Create new product feature</h1>
+<form #form="ngForm" (ngSubmit)="createProductFeature()">
+    <div class="mb-3">
+      <label for="txtTitle" class="form-label">Title</label>
+      <input type="email" class="form-control" id="txtTitle" [(ngModel)] = "newFeature.featureTitle" >
+    </div>
+    <div class="mb-3">
+      <label for="txtDescription" class="form-label">Description</label>
+      <input class="form-control" id="txtDescription" [(ngModel)] = "newFeature.description" >
+    </div>
+    <div class="mb-3">
+        <label for="txtEstCapacity" class="form-label">Estimated Capacity</label>
+        <input  class="form-control" id="txtEstCapacity"  [(ngModel)] = "newFeature.estCapacity">
+    </div>
+    <div class="mb-3">
+        <label for="txtStatus" class="form-label">Status</label>
+        <input class="form-control" id="txtStatus"  [(ngModel)] = "newFeature.status">
+    </div>
+    <div class="mb-3">
+        <label for="txtTargetCompDate" class="form-label">Target Completion Date</label>
+        <input  class="form-control" id="txtTargetCompDate"  [(ngModel)] = "newFeature.targetCompDate">
+    </div>
+    <div class="mb-3">
+        <label for="txtActualCompDate" class="form-label">Actual Completion Date</label>
+        <input class="form-control" id="txtActualCompDate"  [(ngModel)] = "newFeature.actualCompDate">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>

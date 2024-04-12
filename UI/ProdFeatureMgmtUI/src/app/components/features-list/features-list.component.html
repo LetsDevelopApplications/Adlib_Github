@@ -4,6 +4,7 @@
 <a routerLink="/createFeature" class="btn btn-primary">Create Feature</a>
 <table class="table" *ngIf="features && features.length >0">
     <thead>
+        <th scope="col">ID</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
         <th scope="col">Estimated Capacity</th>
@@ -13,12 +14,13 @@
     </thead>
     <tbody>
         <tr *ngFor="let feature of features">
-            <td>{{ feature.featuretitle }} </td>
+            <td>{{ feature.Id }} </td>
+            <td>{{ feature.featureTitle }} </td>
             <td>{{ feature.description }} </td>
             <td>{{ feature.estCapacity }} </td>
             <td>{{ feature.status }} </td>
             <td>{{ feature.targetCompDate }} </td>
-            <td>{{ feature.ActualCompDate }} </td>
+            <td>{{ feature.actualCompDate }} </td>
         </tr>
     </tbody>
 </table>

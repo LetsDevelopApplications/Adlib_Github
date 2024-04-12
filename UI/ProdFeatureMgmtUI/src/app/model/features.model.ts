@@ -1,8 +1,10 @@
 export interface Feature{
-    featuretitle: string,
+    Id:string,
+    featureTitle: string,
     description: string,
     estCapacity:string,
     status:string,
     targetCompDate:string,
-    ActualCompDate:string
+    actualCompDate:string
+    
 }
