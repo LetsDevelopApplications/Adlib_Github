@@ -34,8 +34,9 @@ namespace PFMSAPI
                         ActualCompDate="12-Oct-2024"
                     }
                 };
-            context.ProductFeatures.RemoveRange(productfeatures);
-            context.ProductFeatures.AddRange(productfeatures);
+            
+            if (context.ProductFeatures.ToList().Count() == 0)
+                context.ProductFeatures.AddRange(productfeatures);
             if (context.HasChanges())
                 context.SaveChanges();
         }

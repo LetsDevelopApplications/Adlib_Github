@@ -46,10 +46,10 @@ namespace PFMSAPI.Controllers
 
 
         [HttpDelete]
-        public ActionResult<bool> DeleteProductFeatures(ProductFeature newfeature)
+        public async Task<bool> DeleteProductFeatures(ProductFeature newfeature)
         {
-            return Ok(_productFeatures.DeleteProductFeature(newfeature));
-
+            await _productFeatures.DeleteProductFeature(newfeature);
+            return true;
 
         }
     }
