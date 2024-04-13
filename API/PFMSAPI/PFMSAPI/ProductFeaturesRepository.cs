@@ -61,8 +61,7 @@ namespace PFMSAPI
             using var context = new ProductFeaturesDBContext();
             context.ProductFeatures.Update(featurerequest);
             await context.SaveChangesAsync();
-            return true;
-
+           return true;
         }
 
         public async Task<bool> DeleteProductFeature(ProductFeature feature)

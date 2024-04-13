@@ -27,9 +27,9 @@ export class ProductFeaturesService {
   }
  
  
-  addProductFeature(Feature: Feature): Observable<any> {
+  addProductFeature(newFeature: Feature): Observable<any> {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.post<Feature>(this.baseApiUrl + '/api/ProductFeaturesontroller/AddProductFeatures', Feature, httpOptions);
+    return this.http.post<Feature>(this.baseApiUrl + '/api/ProductFeaturesontroller/AddProductFeatures', newFeature, httpOptions);
   }
 
   editProductFeature(Feature: Feature): Observable<Feature> {
