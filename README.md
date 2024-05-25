@@ -1,7 +1,7 @@
 **Angular , Typescript Ecommerce Web application**
 
 This is project is made to learn and understand the basics of Angular. This project is developed in Angular and I have planned to add database layer and utilise it via API call currently it is using mock data to display list of products and product details but API call is the plan.
-I have used Bootstrap for UI portion. Below are some sample images of running website.  
+I have used Bootstrap for UI portion. Below are some sample images of running website.  Please note I am still working on this project to add extra features.
 
 Home Page
 ![EcommerceHomePage](https://github.com/LetsDevelopApplications/Ecommerce_Project/assets/37673876/4566b4f4-ac49-4df0-9ebe-00c7820eabe0)
