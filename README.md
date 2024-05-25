@@ -11,3 +11,20 @@ List of Products
 
 Product details 
 ![EcommerceProductDetails](https://github.com/LetsDevelopApplications/Ecommerce_Project/assets/37673876/7625509b-0317-4d23-9195-c323d6e4b2ae)
+
+**Getting Started**
+
+This app can be installed by cloning this git repository.
+git clone https://github.com/LetsDevelopApplications/Ecommerce_Project.git folder-name
+
+Next step is to run npm install in both the directories.
+cd folder-name
+cd backend
+npm run install
+cd.. // return to folder-name
+cd client
+npm run install
+
+**To run this application **__
+
+ng serve
