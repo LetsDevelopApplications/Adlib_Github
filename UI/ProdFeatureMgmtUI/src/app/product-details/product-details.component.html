@@ -1,0 +1,20 @@
+<div class="container">
+    
+      <div class="col-md-6 offset-md-3">
+        <div  *ngIf="selectedproducts" style="margin-top: 15%;">
+                    <h1 class="my-4">Product details</h1>
+                    <img [src]="selectedproducts.productImage" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ selectedproducts.productTitle }}</h5>
+                      <p class="card-text">{{ selectedproducts.productDetails }}</p>
+                      <p class="card-text">{{ selectedproducts.productFeatures }}</p>
+                      <p class="card-text">{{ selectedproducts.productSpecifications }}</p>
+                      <p class="card-text"><strong>Price:</strong> ${{ selectedproducts.salePrice }}</p>
+                      <!-- <button class="btn btn-primary" (click)="addToCart(selectedProduct)">Add to Cart</button> -->
+                     
+                      <span class="badge text-bg-primary rounded-pill"><button type="button" (click)="goBack()" class="btn btn-primary">go back</button></span>
+                    </div>
+           
+        </div>
+      </div>
+    </div>

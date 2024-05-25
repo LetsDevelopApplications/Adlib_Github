@@ -1,0 +1,65 @@
+<div class="container">
+    <h1> Create New Product </h1>
+    <form [formGroup]="createForm">
+        <!-- <div class="mb-3">
+            <label for="txtTitle" class="form-label">ID</label>
+            <input class="form-control" id="txtTitle" formControlName="Id" required maxlength="1000">
+        </div> -->
+        <div class="mb-3">
+          <label for="txtTitle" class="form-label">Title</label>
+          <input class="form-control" formControlName="featureTitle" required>
+          <div *ngIf="f['featureTitle'].errors?.['required']">
+            <div *ngIf="f['featureTitle'].errors?.['required']" style="color: red;">Feature Title is required</div>
+        </div>
+        </div>
+        <div class="mb-3">
+          <label for="txtDescription" class="form-label">Description</label>
+          <textarea class="form-control" cols="30" rows="5" formControlName="description" required  maxlength="5000"></textarea>
+          <div *ngIf="f['description'].errors?.['required']">
+            <div *ngIf="f['description'].errors?.['required']" style="color: red;">Description is required</div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Estimated Complexity</label>
+            <select formControlName="estCapacity" class="form-select" required aria-label="select example" style="width: 150px;">
+                <option value="1">S</option>
+                <option value="2">M</option>
+                <option value="3">L</option>
+                <option value="4">XL</option>
+            </select>
+            <div *ngIf="f['estCapacity'].errors?.['required']">
+                <div *ngIf="f['estCapacity'].errors?.['required']" style="color: red;">Estimated Complexity is required</div>
+            </div>
+            <!-- <input  class="form-control" id="txtEstCapacity"  [(ngModel)] = "newFeature.estCapacity"> -->
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Status</label>
+            <select formControlName="status" class="form-select" required aria-label="select example" style="width: 150px;">
+                <option value="">Select Status
+                <option value="1">New</option>
+                <option value="2">Active</option>
+                <option value="3">Closed</option>
+                <option value="4">Abandoned</option>
+            </select>
+            <div *ngIf="f['status'].errors?.['required']">
+                <div *ngIf="f['status'].errors?.['required']" style="color: red;">Status is required</div>
+            </div>
+            <!-- <input class="form-control" id="txtStatus"  [(ngModel)] = "newFeature.status"> -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Target Completion Date</label>
+            <input formControlName="targetCompDate"  class="form-control" required>
+            <div *ngIf="f['targetCompDate'].errors?.['required']">
+                <div *ngIf="f['targetCompDate'].errors?.['required']" style="color: red;">Target Completion Date is required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Actual Completion Date</label>
+            <input formControlName="actualCompDate"  class="form-control" id="txtActualCompDate" required>
+            <div *ngIf="f['actualCompDate'].errors?.['required']">
+                <div *ngIf="f['actualCompDate'].errors?.['required']" style="color: red;">Actual Completion Date is required</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </form>
+</div>

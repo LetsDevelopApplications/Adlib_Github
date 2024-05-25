@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditFeatureComponent } from './edit-feature.component';
+import { EditFeatureComponent } from './manage-cart.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductFeaturesService } from '../../services/product-features.service';
-import { Feature } from '../../model/features.model';
+import { Feature } from '../../model/Products.model';
 import { of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 

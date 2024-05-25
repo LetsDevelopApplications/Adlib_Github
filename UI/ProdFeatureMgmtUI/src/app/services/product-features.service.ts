@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Feature } from '../model/features.model';
+import { Product } from '../model/Products.model';
 import { Observable, catchError, throwError } from 'rxjs';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { ALL } from 'dns';
 
 
 const httpOptions = {
@@ -18,29 +19,17 @@ const httpOptions = {
 export class ProductFeaturesService {
  
   baseApiUrl: string="https://localhost:7193";
+  products : Product;
 
-  
+
   constructor(private http:HttpClient) { }
 
-  getAllProductFeatures():Observable<Feature[]> {
-   return this.http.get<Feature[]>(this.baseApiUrl+ '/api/ProductFeaturesontroller',httpOptions);
-  }
+  getAllProductFeatures():Product {
+   return  this.products ; //this.http.get<Products[]>(this.baseApiUrl+ '/api/ProductFeaturesontroller',httpOptions);
+  };
  
- 
-  addProductFeature(newFeature: Feature): Observable<any> {
-    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.post<Feature>(this.baseApiUrl + '/api/ProductFeaturesontroller/AddProductFeatures', newFeature, httpOptions);
-  }
-
-  editProductFeature(Feature: Feature): Observable<Feature> {
-    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.put<Feature>(this.baseApiUrl + '/api/ProductFeaturesontroller/EditProductFeatures', Feature, httpOptions);
-  }
-
-  DeleteProductFeature(Feature: Feature): Observable<any> {
-    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-    return this.http.delete<Feature>(this.baseApiUrl + '/api/ProductFeaturesontroller');
-  }
-
+  // getProductById(id: number): Products {
+  //   return this.products.find(product => product.id === id);
+  // }
 
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Feature } from '../../model/features.model';
+import { PRODUCTS } from '../../model/Products.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule,Router} from '@angular/router';
 
@@ -13,44 +13,42 @@ import {FormsModule} from '@angular/forms';
 import { ProductFeaturesService } from '../../services/product-features.service';
 import { error } from 'console';
 import { response } from 'express';
-import { CreateFeatureComponent } from "../create-feature/create-feature.component";
-import { EditFeatureComponent } from "../edit-feature/edit-feature.component";
+import { CreateProductComponent } from "../create-product/create-product.component";
+import { ManageCartComponent } from "../manage-cart/manage-cart.component";
 
 @Component({
     selector: 'app-features-list',
     standalone: true,
-    templateUrl: './features-list.component.html',
-    styleUrl: './features-list.component.css',
+    templateUrl: './products-list.component.html',
+    styleUrl: './products-list.component.css',
     imports: [CommonModule,
         FormsModule,
         NgIf,
-        NgFor, NgForOf, RouterModule, CreateFeatureComponent, EditFeatureComponent]
+        NgFor, NgForOf, RouterModule, CreateProductComponent, ManageCartComponent]
 })
-export class FeaturesListComponent implements OnInit{
-  features: Feature[] = [];
+export class FeaturesListComponent{
+  products = PRODUCTS;
+
+
+  productToEdit:any;
  
-  feature:any;
-  featureToEdit:any;
 
   constructor(private productfeaturesservice:ProductFeaturesService, private router: Router){}
 
-  ngOnInit(): void {
-    this.productfeaturesservice.getAllProductFeatures()
-    .subscribe({
-      next: (features) => {
-        this.features = features;
-        console.log(this.features);
-      },
-      error:(response) => {
-        console.log(response);
-      }
-    });
-  }
+  // ngOnInit(): void {
+    
+  //   // this.productfeaturesservice.getAllProductFeatures()
+  //   // .subscribe({
+  //   //   next: (products) => {
+  //   //     this.products = products;
+  //   //     console.log(this.products);
+  //   //   },
+  //     // error:(response) => {
+  //     //   console.log(response);
+  //     // }
+  //   //});
+  // }
 
-  editFeature(feature: Feature){
-    this.featureToEdit = feature;
-    console.log(this.featureToEdit);
-  }
 
     // {
     //   featuretitle:'Inventory change',

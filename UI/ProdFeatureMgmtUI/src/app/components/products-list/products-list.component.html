@@ -1,0 +1,20 @@
+<div class="container">
+<h1> Products List</h1>
+
+<!-- <a routerLink="/createFeature"  class="btn btn-primary">New Product</a> -->
+<div class="container">
+    <h1 class="my-4">Featured Products</h1>
+    <ul class="list-inline">
+        <li *ngFor="let product of products" class="list-inline-item product-list-item">
+
+            <img src="{{ product.productImage }}" class="card-img-top" alt="Product 1">
+            <h5 class="card-title">{{ product.productTitle }}</h5>
+            <p class="card-text"><strong>Price:</strong> ${{ product.salePrice }} </p>
+            <p class="card-text">{{ product.OverallRating }} </p>
+            <span class="badge text-bg-primary rounded-pill"> <a routerLink="/detail/{{product.id}}" class="btn btn-primary">View Details</a> </span>
+                <!-- <span><button (click)="editFeature(feature)" class="btn btn-primary" data-bs-target="#addEditFeatureModal">Add to Cart</button></td>  
+                <span><button (click)="editFeature(feature)" class="btn btn-primary">Delete</button></th>    -->
+        </li>
+    </ul>
+</div>
+</div>
