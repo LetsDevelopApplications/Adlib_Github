@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { FeaturesListComponent } from './components/products-list/products-list.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ManageCartComponent } from './components/manage-cart/manage-cart.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
 export const routes: Routes = [

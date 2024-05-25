@@ -1,6 +1,6 @@
 
 import { Component, Input, OnInit } from '@angular/core';
-import { PRODUCTS, Product } from '../model/Products.model';
+import { PRODUCTS, Product } from '../../model/Products.model';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
